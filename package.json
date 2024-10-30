@@ -4,5 +4,8 @@
     "bootstrap-icons": "^1.11.3",
     "init": "^0.1.2"
   },
-  "version": "0.2.0"
+  "version": "0.2.0",
+  "devDependencies": {
+    "sass": "^1.80.5"
+  }
 }
