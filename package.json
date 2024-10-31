@@ -6,8 +6,12 @@
   },
   "version": "0.4.0",
   "devDependencies": {
+    "@eslint/js": "^9.13.0",
     "eslint": "^9.13.0",
     "eslint-plugin-html": "^8.1.2",
+    "globals": "^15.11.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "sass": "^1.80.5"
   },
@@ -15,6 +19,21 @@
     "build:dev": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.css",
     "build:prod": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.min.css --style=compressed",
     "watch:css": "sass --load-path=node_modules --quiet-deps --watch src/scss/main.scss:public/css/main.css",
-    "format": "prettier --write '**/*.{html,scss,js}'"
+    "format": "prettier --write '**/*.{html,scss,js}'",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.html": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "eslint --fix"
+    ]
   }
 }
