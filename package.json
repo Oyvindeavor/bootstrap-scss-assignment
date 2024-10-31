@@ -22,7 +22,7 @@
   "scripts": {
     "build:dev": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.css",
     "build:prod": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.min.css --style=compressed",
-    "watch:css": "sass --load-path=node_modules --quiet-deps --watch src/scss/main.scss:public/css/main.css",
+    "watch": "sass --load-path=node_modules --quiet-deps --watch src/scss/main.scss:public/css/main.css",
     "format": "prettier --write '**/*.{html,scss,js}'",
     "prepare": "husky install"
   },
