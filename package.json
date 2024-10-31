@@ -33,6 +33,7 @@
     ],
     "**/*.scss": [
       "eslint --fix"
-    ]
+    ],
+    "!node_modules/**": []
   }
 }
