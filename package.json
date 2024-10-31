@@ -7,5 +7,10 @@
   "version": "0.3.0",
   "devDependencies": {
     "sass": "^1.80.5"
+  },
+  "scripts": {
+    "build:dev": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.css",
+    "build:prod": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.min.css --style=compressed",
+    "watch:css": "sass --load-path=node_modules --quiet-deps --watch src/scss/main.scss:public/css/main.css"
   }
 }
