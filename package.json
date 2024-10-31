@@ -20,19 +20,18 @@
     "build:prod": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.min.css --style=compressed",
     "watch:css": "sass --load-path=node_modules --quiet-deps --watch src/scss/main.scss:public/css/main.css",
     "format": "prettier --write '**/*.{html,scss,js}'",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.js": [
+    "**/*.js": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.html": [
+    "**/*.html": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.scss": [
+    "**/*.scss": [
       "eslint --fix"
     ]
   }
