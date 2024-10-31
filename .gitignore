@@ -5,4 +5,4 @@
 node_modules
 
 # Ignore built CSS files
-public/css/*.css
+public/css/
