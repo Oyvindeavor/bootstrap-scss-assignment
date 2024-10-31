@@ -13,7 +13,9 @@
     "husky": "^8.0.0",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
-    "sass": "^1.80.5"
+    "sass": "^1.80.5",
+    "stylelint": "^16.10.0",
+    "stylelint-scss": "^6.8.1"
   },
   "scripts": {
     "build:dev": "sass --load-path=node_modules --quiet-deps src/scss/main.scss public/css/main.css",
@@ -32,8 +34,12 @@
       "prettier --write"
     ],
     "**/*.scss": [
-      "eslint --fix"
+      "stylelint --fix",
+      "prettier --write"
     ],
-    "!node_modules/**": []
+    "!node_modules/**": [],
+    "!public/css/main.min.css": [
+      "prettier --write"
+    ]
   }
 }
