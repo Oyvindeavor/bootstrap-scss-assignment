@@ -4,5 +4,6 @@
 # node_modules
 node_modules
 
-# Ignore built CSS files
-public/css/
+# Ignore built dev CSS files
+public/css/main.css
+public/css/main.css.map
