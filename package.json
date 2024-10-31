@@ -15,6 +15,7 @@
     "prettier": "^3.3.3",
     "sass": "^1.80.5",
     "stylelint": "^16.10.0",
+    "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-scss": "^6.8.1"
   },
   "scripts": {
