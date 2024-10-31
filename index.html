@@ -1,17 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="/public/css/main.css"> <!-- Dev stylesheet -->
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <!-- Dev stylesheet -->
     <!-- <link rel="stylesheet" href="/public/css/main.min.css">   Prod stylesheet -->
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-</body>
-
+  <body>
+    <!-- Header -->
+    <header>
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Brand Section -->
+          <a class="navbar-brand d-flex align-items-center" href="#">
+            <i class="bi bi-person-raised-hand fs-3 me-2"></i>
+            <span>Social Media</span>
+          </a>
+          <!-- Account Section -->
+          <div class="avatar">
+            <!-- Profile Icon as Toggle Button -->
+            <a
+              href="#"
+              class="d-flex align-items-center text-decoration-none"
+              aria-expanded="false"
+            >
+              <i class="bi bi-person-circle fs-3"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
 </html>
