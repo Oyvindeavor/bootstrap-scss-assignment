@@ -16,6 +16,7 @@
     "sass": "^1.80.5",
     "stylelint": "^16.10.0",
     "stylelint-config-recommended-scss": "^14.1.0",
+    "stylelint-config-standard": "^36.0.1",
     "stylelint-scss": "^6.8.1"
   },
   "scripts": {
@@ -38,9 +39,11 @@
       "stylelint --fix",
       "prettier --write"
     ],
-    "!node_modules/**": [],
-    "!public/css/main.min.css": [
-      "prettier --write"
-    ]
+    "**/*.css": [
+      "prettier --write",
+      "stylelint --fix",
+      "!public/css/main.min.css"
+    ],
+    "!node_modules/**": []
   }
 }
