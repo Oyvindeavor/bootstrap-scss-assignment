@@ -1,15 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-</head>
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <!-- Dev stylesheet -->
+    <!-- <link rel="stylesheet" href="/public/css/main.min.css">   Prod stylesheet -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="src/js/main.mjs" type="module"></script>
+  </head>
 
-<body>
-</body>
-
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-gradient py-4">
+        <div class="container">
+          <!-- Navbar Brand -->
+          <a href="/" class="navbar-brand d-flex align-items-center">
+            <img
+              src="https://placehold.co/600x400"
+              alt="Brand Logo"
+              style="width: 30px; height: 30px"
+              class="me-2"
+            />
+            <span>Buzzr</span>
+          </a>
+          <!-- Navbar Toggle for Mobile View -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Links and Avatar Dropdown -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <!-- Desktop Avatar Dropdown (visible on large screens) -->
+            <div class="dropdown d-none d-lg-block">
+              <img
+                src="https://placehold.co/600x400"
+                class="avatar rounded-circle dropdown-toggle"
+                alt="User profile image"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="width: 40px; height: 40px; object-fit: cover"
+              />
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <li>
+                  <a class="dropdown-item" href="/pages/profile/index.html">
+                    Profile
+                    <i class="bi bi-person-square m-1"></i>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/logout">
+                    Logout
+                    <i class="bi bi-box-arrow-right m-1"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Mobile Profile Links (visible on small screens) -->
+            <ul class="navbar-nav d-lg-none">
+              <li class="nav-item">
+                <a class="nav-link" href="/pages/profile/index.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
 </html>

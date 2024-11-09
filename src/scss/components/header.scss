@@ -1,0 +1,58 @@
+@use "bootstrap/scss/bootstrap";
+
+// Styles for the navbar
+.navbar {
+  background-color: darkslategrey !important;
+  color: bootstrap.$white;
+
+  .navbar-brand,
+  .nav-link {
+    color: bootstrap.$white !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      color: bootstrap.$light !important;
+      transform: scale(1.1);
+      text-decoration: underline;
+    }
+  }
+}
+
+// Styles for the avatar section in the navbar
+.avatar > a {
+  text-decoration: none !important;
+  color: white;
+
+  &:hover {
+    color: white;
+    transform: scale(1.3);
+    transition: 0.3s ease;
+  }
+
+  i {
+    &:hover {
+      box-shadow: 0 0 10px 0 white;
+    }
+  }
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.3);
+    transition: 0.3s ease;
+  }
+}
