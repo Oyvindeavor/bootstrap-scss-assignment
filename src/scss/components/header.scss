@@ -1,13 +1,9 @@
-@use "bootstrap/scss/bootstrap";
-
 // Styles for the navbar
 .navbar {
   background-color: darkslategrey !important;
-  color: bootstrap.$white;
 
   .navbar-brand,
   .nav-link {
-    color: bootstrap.$white !important;
     text-decoration: none;
     font-weight: bold;
     transition:
@@ -15,7 +11,6 @@
       transform 0.3s ease;
 
     &:hover {
-      color: bootstrap.$light !important;
       transform: scale(1.1);
       text-decoration: underline;
     }
@@ -44,6 +39,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  cursor: pointer;
 
   img {
     width: 100%;
