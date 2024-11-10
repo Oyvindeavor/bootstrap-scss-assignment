@@ -37,8 +37,7 @@
     ],
     "**/*.css": [
       "prettier --write",
-      "stylelint --fix",
-      "!public/css/main.min.css"
+      "stylelint --fix"
     ],
     "!node_modules/**": []
   }
