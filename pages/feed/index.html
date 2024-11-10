@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feed page</title>
+    <link rel="stylesheet" href="../../public/css/main.min.css" />
+    <link rel="stylesheet" href="/public/font/bootstrap-icons.css" />
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body data-bs-theme="dark">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-body-secondary py-4">
+        <div class="container">
+          <!-- Navbar Brand -->
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <i class="bi bi-phone-vibrate me-2"></i>
+            <span>Buzzr</span>
+          </a>
+          <!-- Navbar Toggle for Mobile View -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar Links and Avatar Dropdown -->
+          <div
+            class="collapse navbar-collapse justify-content-end"
+            id="navbarNav"
+          >
+            <!-- Desktop Avatar Dropdown (visible on large screens) -->
+            <div class="dropdown d-none d-lg-block">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0fGVufDB8fDB8fHww"
+                class="avatar rounded-circle dropdown-toggle"
+                alt="User profile image"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              />
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton"
+              >
+                <li>
+                  <a class="dropdown-item" href="/pages/profile/index.html">
+                    Profile
+                    <i class="bi bi-person-square m-1"></i>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/">
+                    Logout
+                    <i class="bi bi-box-arrow-right m-1"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <!-- Mobile Profile Links (visible on small screens) -->
+            <ul class="navbar-nav d-lg-none my-5">
+              <li class="nav-item">
+                <a class="nav-link fs-6" href="/pages/profile/index.html">
+                  Profile
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fs-6" href="/">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Main Content -->
+    <main class="container my-4 feed">
+      <!-- Search Bar and Sort Options -->
+      <section
+        aria-label="Search and Sort Posts"
+        class="d-flex justify-content-between align-items-center mb-4"
+      >
+        <!-- Search Bar -->
+        <div class="input-group m-2">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search posts"
+            aria-label="Search posts"
+            id="search-bar"
+          />
+          <button class="btn btn-outline-secondary" type="button">
+            Search
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+        <!-- Sort Options -->
+        <div>
+          <label for="sort-posts" class="visually-hidden">Sort posts</label>
+          <select class="form-select" id="sort-posts" aria-label="Sort posts">
+            <option selected disabled>Sort by</option>
+            <option value="1">Newest</option>
+            <option value="2">Oldest</option>
+            <option value="3">Most Popular</option>
+          </select>
+        </div>
+      </section>
+      <!-- Post Form Dropdown in Card -->
+      <section aria-label="Create New Post" class="mb-4 m-2">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <button
+              class="btn btn-primary mb-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#postForm"
+              aria-expanded="false"
+              aria-controls="postForm"
+            >
+              Create New Post
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <!-- Collapsible Form -->
+            <div class="collapse" id="postForm">
+              <form>
+                <div class="mb-3">
+                  <label for="post-text" class="form-label">
+                    What's on your mind?
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="post-text"
+                    rows="3"
+                    placeholder="Write something..."
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Post
+                  <i class="bi bi-pencil-square"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Post Feed -->
+      <section aria-label="Social Media Feed" class="container my-5">
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1707353402114-9881ed692913?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTAxfHxjYXR8ZW58MHx8MHx8fDA%3D"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">Randomguy423e</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <img
+                  src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2pkN3V5MWc4bTZtZG00c2t6am1kMWd1MjZhMHZ2aTIyNHU2cjY5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kSbZ8wf2vgsjIpmQI4/giphy.gif"
+                  class="img-fluid rounded"
+                  alt="Post image of new exhaust"
+                />
+                <p class="card-text">i dont remember this.</p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-sm">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0fGVufDB8fDB8fHww"
+                class="rounded-circle user-avatar"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">Ola Nordmann</h5>
+              </a>
+              <time datetime="PT5H" class="text-muted">5 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <img
+                alt="post image"
+                src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGhvNDJhNzB0YWZvNzZ3b294ejY4aWhja21qOHh6ajdzNm8yY3BuayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l41lLs970IkkBi6f6/giphy.gif"
+              />
+              <p class="card-text">
+                Alright! You want nested specificity issues? Let’s get nested!
+              </p>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1504384558400-c1347a7bd18f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzF8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">Peculiar2</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <img
+                  src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3Frd2hlZTJiNHplZzU0dTdlM2FpenJhcWRpcmp1cHJiMjNpdHNsayZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P4sjB6SI2fErK/giphy.gif"
+                  class="img-fluid rounded"
+                  alt="Post image of new exhaust"
+                />
+                <p class="card-text"></p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1475518112798-86ae358241eb?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">HikingLover</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1690574169354-d6cc4299cf84?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aGlraW5nfGVufDB8fDB8fHww"
+                  class="img-fluid rounded"
+                  alt="Post image of new exhaust"
+                />
+                <p class="card-text">Hiking in the forest</p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">SleepySoul</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <img
+                  src="https://images.unsplash.com/photo-1516685018646-549198525c1b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBhc3RhfGVufDB8fDB8fHww"
+                  class="img-fluid rounded"
+                  alt="Post image of new exhaust"
+                />
+                <p class="card-text">
+                  Made pasta at home to save money... ended up spending $20 on
+                  ingredients. But hey, I can call it 'gourmet' now, right? 🍝💸
+                </p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2F0fGVufDB8fDB8fHww"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">Noclue</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <p class="card-text">
+                  Set 5 alarms to wake up early for a productive morning…
+                  Snoozed all of them and here we are at noon. 😴☕
+                </p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW92aWV8ZW58MHx8MHx8fDA%3D"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">Moviebuff42</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <p class="card-text">
+                  Decided to watch one episode… three seasons later, it’s 3 a.m.
+                  and I have no regrets. 🥤📺
+                </p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1673141390230-8b4a3c3152b1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z2FyZGVufGVufDB8fDB8fHww"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">GreenThumbWannabe</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <p class="card-text">
+                  Bought a new plant and named it Fred. Let’s see if Fred can
+                  make it a week without dying this time. 🌱🤞
+                </p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="/pages/profile/index.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a href="/pages/profile/index.html" class="text-decoration-none">
+                <h5 class="mb-0">Doggodad</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="/pages/post/index.html" class="text-decoration-none">
+            <div class="card-body">
+              <figure class="mb-2">
+                <img
+                  src="https://images.unsplash.com/photo-1532117423220-2990b8531c94?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nJTIwcGxhbnR8ZW58MHx8MHx8fDA%3D"
+                  class="img-fluid rounded"
+                  alt="Post image of new exhaust"
+                />
+                <p class="card-text">
+                  My dog just spent 10 minutes barking at a leaf. Guess we’re
+                  officially under attack. 🐶🍃
+                </p>
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
+  "plugins": ["stylelint-scss"],
+  "ignoreFiles": [
+    "public/font/**/*.css",
+    "public/bootstrap-icons/font/**/*.css"
+  ],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "block-no-empty": true,
+    "declaration-block-no-duplicate-properties": true,
+    "property-no-unknown": true
+  }
+}
