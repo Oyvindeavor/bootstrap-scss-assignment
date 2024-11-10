@@ -36,8 +36,7 @@
       "prettier --write"
     ],
     "**/*.scss": [
-      "stylelint --fix",
-      "prettier --write"
+      "stylelint --fix"
     ],
     "**/*.css": [
       "prettier --write",
