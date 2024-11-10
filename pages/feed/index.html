@@ -28,7 +28,6 @@
             <img
               src="https://placehold.co/600x400"
               alt="Brand Logo"
-              style="width: 30px; height: 30px"
               class="me-2"
             />
             <span>Buzzr</span>
@@ -53,13 +52,12 @@
             <!-- Desktop Avatar Dropdown (visible on large screens) -->
             <div class="dropdown d-none d-lg-block">
               <img
-                src="https://placehold.co/600x400"
+                src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0fGVufDB8fDB8fHww"
                 class="avatar rounded-circle dropdown-toggle"
                 alt="User profile image"
                 id="dropdownMenuButton"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style="width: 40px; height: 40px; object-fit: cover"
               />
               <ul
                 class="dropdown-menu dropdown-menu-end"
@@ -75,7 +73,7 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/logout">
+                  <a class="dropdown-item" href="/">
                     Logout
                     <i class="bi bi-box-arrow-right m-1"></i>
                   </a>
@@ -96,14 +94,14 @@
       </nav>
     </header>
     <!-- Main Content -->
-    <main class="container my-4" style="max-width: 700px">
+    <main class="container my-4 feed">
       <!-- Search Bar and Sort Options -->
       <section
         aria-label="Search and Sort Posts"
         class="d-flex justify-content-between align-items-center mb-4"
       >
         <!-- Search Bar -->
-        <div class="input-group" style="max-width: 300px">
+        <div class="input-group m-2">
           <input
             type="text"
             class="form-control"
@@ -128,7 +126,7 @@
         </div>
       </section>
       <!-- Post Form Dropdown in Card -->
-      <section aria-label="Create New Post" class="mb-4">
+      <section aria-label="Create New Post" class="mb-4 m-2">
         <div class="card shadow-sm">
           <div class="card-body">
             <button
@@ -166,17 +164,12 @@
         </div>
       </section>
       <!-- Post Feed -->
-      <section
-        aria-label="Social Media Feed"
-        class="container my-5"
-        style="max-width: 800px"
-      >
-        <h2 class="mb-4 text-center">Social Media Feed</h2>
+      <section aria-label="Social Media Feed" class="container my-5">
         <!-- Post Template (can be repeated) -->
         <article class="card mb-4 shadow-lg">
           <header class="card-header d-flex align-items-center">
             <!-- User Profile Link for Avatar -->
-            <a href="user-profile.html" class="me-3">
+            <a href="/pages/profile/index.html" class="me-3">
               <img
                 src="https://images.unsplash.com/photo-1730918404452-af022c11f4a4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
                 class="rounded-circle"
@@ -185,17 +178,14 @@
             </a>
             <!-- User Profile Link for Username -->
             <div>
-              <a
-                href="user-profile.html"
-                class="text-decoration-none text-dark"
-              >
+              <a href="/pages/profile/index.html" class="text-decoration-none">
                 <h5 class="mb-0">Username</h5>
               </a>
               <time datetime="PT2H" class="text-muted">2 hours ago</time>
             </div>
           </header>
           <!-- Clickable Card Body for Post -->
-          <a href="post-details.html" class="text-decoration-none">
+          <a href="/pages/post/index.html" class="text-decoration-none">
             <div class="card-body">
               <p class="card-text">
                 Installed new exhaust today looks cracking!
@@ -211,24 +201,37 @@
           </a>
           <!-- Footer with Buttons -->
           <footer class="card-footer d-flex justify-content-between">
-            <button class="btn btn-outline-primary btn-sm" aria-label="Like">
-              <i class="bi bi-hand-thumbs-up"></i>
-              Like
-            </button>
-            <button
-              class="btn btn-outline-secondary btn-sm"
-              aria-label="Comment"
-            >
-              <i class="bi bi-chat"></i>
-              Comment
-            </button>
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
           </footer>
         </article>
         <!-- Another Post Example -->
         <article class="card mb-4 shadow-sm">
           <header class="card-header d-flex align-items-center">
             <!-- User Profile Link for Avatar -->
-            <a href="user-profile.html" class="me-3">
+            <a href="/pages/profile/index.html" class="me-3">
               <img
                 src="https://images.unsplash.com/photo-1730918404288-c03126acabce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D"
                 class="rounded-circle user-avatar"
@@ -237,34 +240,44 @@
             </a>
             <!-- User Profile Link for Username -->
             <div>
-              <a
-                href="user-profile.html"
-                class="text-decoration-none text-dark"
-              >
+              <a href="/pages/profile/index.html" class="text-decoration-none">
                 <h5 class="mb-0">AnotherUser</h5>
               </a>
               <time datetime="PT5H" class="text-muted">5 hours ago</time>
             </div>
           </header>
           <!-- Clickable Card Body for Post -->
-          <a href="post-details.html" class="text-decoration-none">
+          <a href="/pages/post/index.html" class="text-decoration-none">
             <div class="card-body">
               <p class="card-text">Anyone else feeling motivated today?</p>
             </div>
           </a>
           <!-- Footer with Buttons -->
           <footer class="card-footer d-flex justify-content-between">
-            <button class="btn btn-outline-primary btn-sm" aria-label="Like">
-              <i class="bi bi-hand-thumbs-up"></i>
-              Like
-            </button>
-            <button
-              class="btn btn-outline-secondary btn-sm"
-              aria-label="Comment"
-            >
-              <i class="bi bi-chat"></i>
-              Comment
-            </button>
+            <!-- Like Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-primary btn-sm d-flex align-items-center"
+                aria-label="Like"
+              >
+                <i class="bi bi-hand-thumbs-up me-1"></i>
+                Like
+              </button>
+              <span class="ms-2 text-muted" id="like-count">45</span>
+              <!-- Like Counter -->
+            </div>
+            <!-- Comment Button with Counter -->
+            <div class="d-flex align-items-center">
+              <button
+                class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+                aria-label="Comment"
+              >
+                <i class="bi bi-chat me-1"></i>
+                Comment
+              </button>
+              <span class="ms-2 text-muted" id="comment-count">12</span>
+              <!-- Comment Counter -->
+            </div>
           </footer>
         </article>
       </section>
