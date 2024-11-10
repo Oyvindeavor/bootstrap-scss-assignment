@@ -6,6 +6,7 @@
     "block-no-empty": true,
     "declaration-block-no-duplicate-properties": true,
     "property-no-unknown": true,
+    "scss/at-import-no-partial-extension": true,
     "scss/at-import-partial-extension-blacklist": [""]
   }
 }
