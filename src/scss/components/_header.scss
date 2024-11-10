@@ -1,6 +1,7 @@
 // Styles for the navbar
 .navbar {
-  background-color: darkslategrey !important;
+  background-color: #212529;
+  box-shadow: 0 0 10px 0 rgb(159 154 14 / 20%);
 
   .navbar-brand,
   .nav-link {
@@ -14,6 +15,13 @@
       transform: scale(1.1);
       text-decoration: underline;
     }
+  }
+
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    transition: all 0.3s ease;
   }
 }
 

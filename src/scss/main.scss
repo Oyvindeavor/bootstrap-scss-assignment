@@ -1,5 +1,7 @@
-@import url("custom-variables");
-@import url("components/header");
-@import url("components/card");
-@import url("pages/login");
-@import url("bootstrap/scss/bootstrap");
+@import "custom-variables";
+@import "components/header";
+@import "components/card";
+@import "pages/login";
+@import "pages/profile";
+@import "pages/feed";
+@import "bootstrap/scss/bootstrap";
