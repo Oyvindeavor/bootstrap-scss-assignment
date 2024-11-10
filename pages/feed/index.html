@@ -11,7 +11,6 @@
       rel="stylesheet"
       href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
     />
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -20,7 +19,7 @@
     ></script>
   </head>
 
-  <body>
+  <body data-bs-theme="dark">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-gradient py-4">
         <div class="container">
@@ -96,5 +95,179 @@
         </div>
       </nav>
     </header>
+    <!-- Main Content -->
+    <main class="container my-4" style="max-width: 700px">
+      <!-- Search Bar and Sort Options -->
+      <section
+        aria-label="Search and Sort Posts"
+        class="d-flex justify-content-between align-items-center mb-4"
+      >
+        <!-- Search Bar -->
+        <div class="input-group" style="max-width: 300px">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search posts"
+            aria-label="Search posts"
+            id="search-bar"
+          />
+          <button class="btn btn-outline-secondary" type="button">
+            Search
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+        <!-- Sort Options -->
+        <div>
+          <label for="sort-posts" class="visually-hidden">Sort posts</label>
+          <select class="form-select" id="sort-posts" aria-label="Sort posts">
+            <option selected disabled>Sort by</option>
+            <option value="1">Newest</option>
+            <option value="2">Oldest</option>
+            <option value="3">Most Popular</option>
+          </select>
+        </div>
+      </section>
+      <!-- Post Form Dropdown in Card -->
+      <section aria-label="Create New Post" class="mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <button
+              class="btn btn-primary mb-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#postForm"
+              aria-expanded="false"
+              aria-controls="postForm"
+            >
+              Create New Post
+              <i class="bi bi-pencil-square"></i>
+            </button>
+            <!-- Collapsible Form -->
+            <div class="collapse" id="postForm">
+              <form>
+                <div class="mb-3">
+                  <label for="post-text" class="form-label">
+                    What's on your mind?
+                  </label>
+                  <textarea
+                    class="form-control"
+                    id="post-text"
+                    rows="3"
+                    placeholder="Write something..."
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Post
+                  <i class="bi bi-pencil-square"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Post Feed -->
+      <section
+        aria-label="Social Media Feed"
+        class="container my-5"
+        style="max-width: 800px"
+      >
+        <h2 class="mb-4 text-center">Social Media Feed</h2>
+        <!-- Post Template (can be repeated) -->
+        <article class="card mb-4 shadow-lg">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="user-profile.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1730918404452-af022c11f4a4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
+                class="rounded-circle"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a
+                href="user-profile.html"
+                class="text-decoration-none text-dark"
+              >
+                <h5 class="mb-0">Username</h5>
+              </a>
+              <time datetime="PT2H" class="text-muted">2 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="post-details.html" class="text-decoration-none">
+            <div class="card-body">
+              <p class="card-text">
+                Installed new exhaust today looks cracking!
+              </p>
+              <figure class="mb-2">
+                <img
+                  src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2pkN3V5MWc4bTZtZG00c2t6am1kMWd1MjZhMHZ2aTIyNHU2cjY5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kSbZ8wf2vgsjIpmQI4/giphy.gif"
+                  class="img-fluid rounded"
+                  alt="Post image of new exhaust"
+                />
+              </figure>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <button class="btn btn-outline-primary btn-sm" aria-label="Like">
+              <i class="bi bi-hand-thumbs-up"></i>
+              Like
+            </button>
+            <button
+              class="btn btn-outline-secondary btn-sm"
+              aria-label="Comment"
+            >
+              <i class="bi bi-chat"></i>
+              Comment
+            </button>
+          </footer>
+        </article>
+        <!-- Another Post Example -->
+        <article class="card mb-4 shadow-sm">
+          <header class="card-header d-flex align-items-center">
+            <!-- User Profile Link for Avatar -->
+            <a href="user-profile.html" class="me-3">
+              <img
+                src="https://images.unsplash.com/photo-1730918404288-c03126acabce?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNHx8fGVufDB8fHx8fA%3D%3D"
+                class="rounded-circle user-avatar"
+                alt="User profile image"
+              />
+            </a>
+            <!-- User Profile Link for Username -->
+            <div>
+              <a
+                href="user-profile.html"
+                class="text-decoration-none text-dark"
+              >
+                <h5 class="mb-0">AnotherUser</h5>
+              </a>
+              <time datetime="PT5H" class="text-muted">5 hours ago</time>
+            </div>
+          </header>
+          <!-- Clickable Card Body for Post -->
+          <a href="post-details.html" class="text-decoration-none">
+            <div class="card-body">
+              <p class="card-text">Anyone else feeling motivated today?</p>
+            </div>
+          </a>
+          <!-- Footer with Buttons -->
+          <footer class="card-footer d-flex justify-content-between">
+            <button class="btn btn-outline-primary btn-sm" aria-label="Like">
+              <i class="bi bi-hand-thumbs-up"></i>
+              Like
+            </button>
+            <button
+              class="btn btn-outline-secondary btn-sm"
+              aria-label="Comment"
+            >
+              <i class="bi bi-chat"></i>
+              Comment
+            </button>
+          </footer>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
