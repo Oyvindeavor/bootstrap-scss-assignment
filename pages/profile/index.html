@@ -19,16 +19,18 @@
     ></script>
   </head>
 
-  <body>
+  <body data-bs-theme="dark">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-gradient py-4">
         <div class="container">
           <!-- Navbar Brand -->
-          <a href="/" class="navbar-brand d-flex align-items-center">
+          <a
+            href="/pages/feed/index.html"
+            class="navbar-brand d-flex align-items-center"
+          >
             <img
               src="https://placehold.co/600x400"
               alt="Brand Logo"
-              style="width: 30px; height: 30px"
               class="me-2"
             />
             <span>Buzzr</span>
@@ -53,13 +55,12 @@
             <!-- Desktop Avatar Dropdown (visible on large screens) -->
             <div class="dropdown d-none d-lg-block">
               <img
-                src="https://placehold.co/600x400"
+                src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0fGVufDB8fDB8fHww"
                 class="avatar rounded-circle dropdown-toggle"
                 alt="User profile image"
                 id="dropdownMenuButton"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
-                style="width: 40px; height: 40px; object-fit: cover"
               />
               <ul
                 class="dropdown-menu dropdown-menu-end"
@@ -75,7 +76,7 @@
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/logout">
+                  <a class="dropdown-item" href="/">
                     Logout
                     <i class="bi bi-box-arrow-right m-1"></i>
                   </a>
@@ -95,5 +96,360 @@
         </div>
       </nav>
     </header>
+    <!-- Main Profile Section -->
+    <main class="container my-4 profile-page">
+      <!-- Profile Header -->
+      <section class="card mb-4">
+        <!-- Profile Banner -->
+        <div class="profile-banner"></div>
+        <div class="card-body text-center">
+          <!-- Profile Picture -->
+          <img
+            src="https://plus.unsplash.com/premium_photo-1667030474693-6d0632f97029?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0fGVufDB8fDB8fHww"
+            class="rounded-circle mb-3 profile-img"
+            alt="User profile image"
+          />
+          <!-- Profile Information -->
+          <h3 class="card-title mb-0">Ola Nordmann</h3>
+          <p class="text-muted">@hikingman93</p>
+          <p>I love photography, follow me for beautiful pictures.</p>
+          <!-- Follow Button and Follower/Following Counts with Modals -->
+          <button class="btn btn-primary mb-3">Follow</button>
+          <div class="d-flex justify-content-center">
+            <button
+              class="btn btn-link text-decoration-none"
+              data-bs-toggle="modal"
+              data-bs-target="#followersModal"
+            >
+              Followers (11)
+            </button>
+            <button
+              class="btn btn-link text-decoration-none ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#followingModal"
+            >
+              Following (2)
+            </button>
+          </div>
+          <!-- Edit Profile Button -->
+          <div class="text-center mt-3">
+            <button
+              class="btn btn-outline-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#editProfileModal"
+            >
+              Edit Profile
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- User Posts Section -->
+      <article class="card mb-4 shadow-lg">
+        <header class="card-header d-flex align-items-center">
+          <!-- User Profile Link for Avatar -->
+          <a href="/pages/profile/index.html" class="me-3">
+            <img
+              src="https://images.unsplash.com/photo-1730918404452-af022c11f4a4?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0fHx8ZW58MHx8fHx8"
+              class="rounded-circle"
+              alt="User profile image"
+            />
+          </a>
+          <!-- User Profile Link for Username -->
+          <div>
+            <a href="/pages/profile/index.html" class="text-decoration-none">
+              <h5 class="mb-0">Username</h5>
+            </a>
+            <time datetime="PT2H" class="text-muted">2 hours ago</time>
+          </div>
+        </header>
+        <!-- Clickable Card Body for Post -->
+        <a href="/pages/post/index.html" class="text-decoration-none">
+          <div class="card-body">
+            <p class="card-text">Installed new exhaust today looks cracking!</p>
+            <figure class="mb-2">
+              <img
+                src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExN2pkN3V5MWc4bTZtZG00c2t6am1kMWd1MjZhMHZ2aTIyNHU2cjY5eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kSbZ8wf2vgsjIpmQI4/giphy.gif"
+                class="img-fluid rounded"
+                alt="Post image of new exhaust"
+              />
+            </figure>
+          </div>
+        </a>
+        <!-- Footer with Buttons -->
+        <footer class="card-footer d-flex justify-content-between">
+          <!-- Like Button with Counter -->
+          <div class="d-flex align-items-center">
+            <button
+              class="btn btn-outline-primary btn-sm d-flex align-items-center"
+              aria-label="Like"
+            >
+              <i class="bi bi-hand-thumbs-up me-1"></i>
+              Like
+            </button>
+            <span class="ms-2 text-muted" id="like-count">45</span>
+            <!-- Like Counter -->
+          </div>
+          <!-- Comment Button with Counter -->
+          <div class="d-flex align-items-center">
+            <button
+              class="btn btn-outline-secondary btn-sm d-flex align-items-center"
+              aria-label="Comment"
+            >
+              <i class="bi bi-chat me-1"></i>
+              Comment
+            </button>
+            <span class="ms-2 text-muted" id="comment-count">12</span>
+            <!-- Comment Counter -->
+          </div>
+        </footer>
+      </article>
+    </main>
+    <!-- Edit Profile Modal -->
+    <div
+      class="modal fade"
+      id="editProfileModal"
+      tabindex="-1"
+      aria-labelledby="editProfileModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editProfileModalLabel">Edit Profile</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <!-- Banner Image URL -->
+              <div class="mb-3">
+                <label for="bannerUrl" class="form-label">
+                  Banner Image URL
+                </label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="bannerUrl"
+                  placeholder="Enter banner image URL"
+                />
+              </div>
+              <!-- Avatar Image URL -->
+              <div class="mb-3">
+                <label for="avatarUrl" class="form-label">
+                  Avatar Image URL
+                </label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="avatarUrl"
+                  placeholder="Enter avatar image URL"
+                />
+              </div>
+              <!-- Bio -->
+              <div class="mb-3">
+                <label for="bio" class="form-label">Bio</label>
+                <textarea
+                  class="form-control"
+                  id="bio"
+                  rows="3"
+                  placeholder="Enter your bio"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Save Changes
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Followers Modal -->
+    <div
+      class="modal fade"
+      id="followersModal"
+      tabindex="-1"
+      aria-labelledby="followersModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="followersModalLabel">Followers</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Followers List with Pagination -->
+            <ul class="list-group mb-3 followers">
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1489084917528-a57e68a79a1e?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0fGVufDB8fDB8fHww"
+                    alt="Follower 1 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>WanderlustSoul</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1677545182067-26ac518ef64f?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8Y2F0fGVufDB8fDB8fHww"
+                    alt="Follower 2 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>PixelNomad</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1500259571355-332da5cb07aa?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2F0fGVufDB8fDB8fHww"
+                    alt="Follower 3 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>EchoExplorer</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Follower 3 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>SkylineDreamer</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1482434368596-fbd06cae4f89?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Follower 3 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>TrailSeeker</span>
+                </a>
+              </li>
+            </ul>
+            <nav aria-label="Followers pagination">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link active" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Following Modal -->
+    <div
+      class="modal fade"
+      id="followingModal"
+      tabindex="-1"
+      aria-labelledby="followingModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="followingModalLabel">Following</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Following List with Pagination -->
+            <ul class="list-group mb-3 following">
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://via.placeholder.com/40"
+                    alt="Follower 1 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>UrbanOdyssey</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://plus.unsplash.com/premium_photo-1677545183884-421157b2da02?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Follower 2 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>VistaVoyager</span>
+                </a>
+              </li>
+              <li class="list-group-item">
+                <a
+                  href="/pages/post/index.html"
+                  class="d-flex align-items-center text-decoration-none"
+                >
+                  <img
+                    src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdHxlbnwwfHwwfHx8MA%3D%3D"
+                    alt="Follower 3 avatar"
+                    class="rounded-circle me-3"
+                  />
+                  <span>SoulfulSteps</span>
+                </a>
+              </li>
+            </ul>
+            <nav aria-label="Following pagination">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link active" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
