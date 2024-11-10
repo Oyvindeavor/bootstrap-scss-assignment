@@ -4,6 +4,7 @@
     "color-no-invalid-hex": true,
     "block-no-empty": true,
     "declaration-block-no-duplicate-properties": true,
+    "scss/at-import-no-partial-extension": true,
     "property-no-unknown": true
   }
 }
